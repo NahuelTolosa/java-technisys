@@ -22,4 +22,8 @@ public class StudentService {
     public StudentModel saveStudent(StudentModel s) { return studentRepository.save(s); }
 
     public StudentModel deleteStudent(String s) { return studentRepository.delete(s); }
+
+    public StudentModel updateStudent ( String surname, StudentModel s) {
+        return this.studentRepository.updateStudent(surname, s);
+    }
 }

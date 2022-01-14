@@ -12,19 +12,23 @@ public class StudentRepository {
     private Database database = new Database();
 
     public ArrayList<StudentModel> getAll() {
-        return database.getStudents();
+        return this.database.getStudents();
     }
 
     public StudentModel save(StudentModel s){
-        return database.addStudent(s);
+        return this.database.addStudent(s);
     }
 
     public StudentModel delete(String s){
-        return database.deleteStudent(s);
+        return this.database.deleteStudent(s);
     }
 
     public StudentModel getStudentBySurname(String s) {
-        return database.getStudentBySurname(s);
+        return this.database.getStudentBySurname(s);
+    }
+
+    public StudentModel updateStudent(String surname, StudentModel s) {
+        return this.database.update(surname, s);
     }
 
 }

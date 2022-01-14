@@ -46,6 +46,20 @@ public class Database {
     }
 
 
+    public StudentModel update ( String surname, StudentModel s){
+        Integer index = getStudentIndex(surname);
+
+        if(index >= 0) {
+            students.get(index).setName(s.getName());
+            students.get(index).setSurname(s.getSurname());
+            students.get(index).setEmail(s.getEmail());
+
+            return students.get(index);
+        }
+
+        return null;
+
+    }
 
     public StudentModel deleteStudent ( String surname ){
 
@@ -69,7 +83,7 @@ public class Database {
 
         for ( StudentModel std : students ) {
 
-            if( surname.equals(std.getName()) )
+            if( surname.equals(std.getSurname()) )
                 return index;
 
             index++;

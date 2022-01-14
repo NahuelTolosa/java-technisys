@@ -40,4 +40,9 @@ public class StudentController {
         return "El usuario no se pudo eliminar";
     }
 
+    @PutMapping("/{surname}")
+    public StudentModel update(@PathVariable("surname") String surname,@RequestBody StudentModel student) {
+        return this.studentService.updateStudent(surname, student);
+    }
+
 }
